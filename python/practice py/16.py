@@ -1,0 +1,8 @@
+print("enter two nos")
+a = int(input())
+print("enter another no")
+b = int(input())
+print("first no=",a)
+print("second no=",b)
+print("add=",a+b)
+print("mult=",a*b)

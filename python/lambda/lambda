@@ -1,0 +1,77 @@
+call by value or call by refernce
+___________________________________
+call by value (value send)  int,float complex string tuple
+def update(a):
+	print(a)
+	a=20
+
+a=10
+update(a)
+print(a)
+
+o/p:
+10
+10
+
+call by address(reference send) list set dict
+def update(L):
+	print(L)
+	L.append(40)
+L=[10,20,30]
+update(L)
+print(L)
+[10, 20, 30]
+[10,20,30,40]
+ 
+
+function alias
+_________________                               #alias-nick name
+def show():
+	print("show function")
+s=show
+d=s
+show()
+s()
+d()
+
+
+
+
+lambda function
+_____________________
+
+without lambda  find the square
+__________________________
+def  sq(x):
+	y=x*x
+	return y
+res=sq(5)           #res variable
+print(res)
+
+
+lambda function 
+__________________
+
+lambda parameter: expression
+
+
+res=lambda x:x*x   #res function
+print(res(5))
+
+
+
+
+without lambda function
+_________________________
+
+def add(x,y):
+	return x+y 
+res=add(10,20)
+print(res)
+
+
+using lambda
+_________________
+
+res=lambda x,y:x+y
+print(res(2,3))

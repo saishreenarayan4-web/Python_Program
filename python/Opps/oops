@@ -1,0 +1,1338 @@
+oops
+____________________
+#wap store one student name rollno and mark display it
+name="muna"
+r=1
+mark=90.50
+print("my name=",name)
+print("my rollno=",r)
+print("my mark=",mark)
+
+o/p:
+my name=muna
+my rollno=1
+my mark=90.50
+
+
+#wap store two student name rollno and mark display it
+
+name="muna"
+r=1
+mark=90.50
+print("my name=",name)
+print("my rollno=",r)
+print("my mark=",mark)
+name="kuna"
+r=2
+mark=80.50
+print("my name=",name)
+print("my rollno=",r)
+print("my mark=",mark)
+
+
+o/p:
+my name=muna
+my rollno=1
+my mark=90.50
+my name=kuna
+my rollno=2
+my mark=80.50
+
+
+name="muna"
+r=1
+mark=90.50
+name="kuna"
+r=2
+mark=80.50
+print("my name=",name)
+print("my rollno=",r)
+print("my mark=",mark)
+
+o/p:
+my name=kuna
+my rollno=2
+my mark=80.50
+
+here first  student data loss
+
+if we store 2 student data  requried 2 name 2 rollno and 2 mark
+
+
+name="muna"
+r=1
+mark=90.50
+name1="kuna"
+r1=2
+mark1=80.50
+print("my name=",name)
+print("my rollno=",r)
+print("my mark=",mark)
+print("my name=",name1)
+print("my rollno=",r1)
+print("my mark=",mark1)
+
+
+o/p:
+my name=muna
+my rollno=1
+my mark=90.50
+my name=kuna
+my rollno=2
+my mark=80.50
+
+
+if we store 100 student data  requried 100 name 100 rollno and 100 mark
+correct 
+this type program is not good  solve these program using oops.
+
+class
+object
+
+encapsulation
+inheritance
+polymorphism
+abstrcation
+constructor
+destructor
+
+how to define class
+__________________
+
+class classname:
+	related data and method
+	....
+	.....
+	constructor
+	destructor
+	method
+
+how to create object
+_______________
+classname(args)   # object creation    nameless object
+
+objectrefernce=classname(args)
+
+
+
+How to acess object data and method
+____________________________________
+objectrefernce.data
+objectrefernce.method(args)
+
+
+
+example
+_______________
+class Student:
+	pass
+s=Student()
+
+
+o/p:
+{}
+
+
+class Student:
+    pass
+s=Student()
+s.name="muna"
+s.rollno=1
+print(s.__dict__)
+
+o/p:
+{'name': 'muna', 'rollno': 1}
+
+
+
+class Student:
+    pass
+s=Student()
+s.name="muna"
+s.rollno=1
+print(s.__dict__)
+s1=Student()
+s1.name="kuna"
+print(s1._dict_)
+
+o/p:
+{'name': 'muna', 'rollno': 1}
+{'name': 'kuna'}
+
+
+
+class Student:
+    name="#"   #class variable   common for all object
+    rollno=0   # class variable 
+s=Student()
+print(s.__dict__)  # { }
+print(Student.__dict__)
+print(s.name)
+s.name="muna"
+print(s.__dict__)
+
+
+o/p:
+{}
+{'_module': 'main', 'name': '#', 'rollno': 0, 'dict': <attribute 'dict' of 'Student' objects>, 'weakref': <attribute 'weakref' of 'Student' objects>, 'doc_': None}
+
+
+class Student:
+    name="#"   #class variable   common for all object
+    rollno=0   # class variable 
+    def __init__(self):   
+        self.name="muna" # instance variable  object data 
+        self.rollno=1
+s=Student() # object create  got where constrcutor 
+print(s.__dict__)  
+print(Student.__dict__)
+
+
+o/p:
+{'name': 'muna', 'rollno': 1}
+{'_module': 'main', 'name': '#', 'rollno': 0, 'init': <function Student.init_ at 0x000001E155CAD300>, '_dict': <attribute 'dict' of 'Student' objects>, 'weakref': <attribute 'weakref' of 'Student' objects>, 'doc_': None}
+
+
+class Student:
+    clg="iter"
+    def __init__(self):   # constructor   but in java and c++ constructor same as classname
+        self.name="muna" # instance variable  object data 
+        self.rollno=1
+s=Student() # object create  got where constrcutor 
+
+print(s._dict_)  
+print(Student._dict_)
+print("my name=",s.name)
+print("my rollno=",s.rollno)
+print("clg name=",s.clg)
+print("clg name better way =",Student.clg)
+#print("my name=",Student.name)  error name is part of object 
+
+
+o/p:
+{'name': 'muna', 'rollno': 1}
+{'_module': 'main', 'clg': 'iter', 'init': <function Student.init_ at 0x000001B9ADB0D120>, '_dict': <attribute 'dict' of 'Student' objects>, 'weakref': <attribute 'weakref' of 'Student' objects>, 'doc_': None}
+my name= muna
+my rollno= 1
+clg name= iter
+clg name better way = iter
+
+
+
+
+
+class Student:
+    clg="iter"  #class variable common for all object
+    def _init_(self):   
+        self.name="muna" # instance variable  object data 
+        self.rollno=1
+s=Student() # object create  got where constrcutor 
+print("my name=",s.name)
+print("my rollno=",s.rollno)
+print("clg name=",s.clg)
+s1=Student()
+print("my name=",s1.name)
+print("my rollno=",s1.rollno)
+print("clg name=",s1.clg)
+
+
+
+o/p:
+my name= muna
+my rollno= 1
+clg name= iter
+my name= muna
+my rollno= 1
+clg name= iter
+
+here all data same  
+change all data difffernt input from keyboard 
+
+
+class Student:
+    clg="iter"  #class variable common for all object
+    def _init_(self): 
+        print("enter name and roll number ")
+        self.name=input() # instance variable  object data 
+        self.rollno=int(input())
+s=Student() # object create  got where constrcutor 
+s1=Student()
+print("clg name=",Student.clg)
+print("my name=",s.name)
+print("my rollno=",s.rollno)
+print("my name=",s1.name)
+print("my rollno=",s1.rollno)
+
+o/p:
+enter name and roll number
+muna
+1
+enter name and roll number
+kuna
+2
+clg name= iter
+my name= muna
+my rollno= 1
+my name= kuna
+
+class Student:
+    clg="iter"  #class variable common for all object
+    def __init__(self):  
+        print("enter name and roll number ")
+        self.name=input() # instance variable  object data 
+        self.rollno=int(input())
+    def show(self):
+        print("my name=",self.name)
+        print("my rollno=",self.rollno)
+
+s=Student() # object create  got where constrcutor 
+s1=Student()
+print("clg name=",Student.clg)
+s.show()
+s1.show()
+
+o/p:
+a das
+1
+enter name and roll number
+b das
+2
+clg name= iter
+my name= a das
+my rollno= 1
+my name= b das
+my rollno= 2
+
+
+class Student:
+    def _init_(self):   # constructor   but in java and c++ constructor same as classname
+        print("enter name and roll number ")
+        self.name=input() # instance variable  object data 
+        self.rollno=int(input())
+    def show(self):
+        print("my name=",self.name)
+        print("my rollno=",self.rollno)
+s=Student() # object create  got where constrcutor 
+s1=Student()
+s.show()
+s1.show()
+
+
+
+
+
+
+usig parameter constructor
+______________________________
+
+class Student:
+    def _init_(self,n,r):   #parameter constructor   but in java and c++ constructor same as classname
+        self.name=n # instance variable or  object data 
+        self.rollno=r
+    def show(self):
+        print("my name=",self.name)
+        print("my rollno=",self.rollno)
+s=Student("muna",1) # object create  go to  constrcutor 
+s1=Student("kuna",2)
+s.show()
+s1.show()
+
+
+o/p:
+my name= muna
+my rollno= 1
+my name= kuna
+my rollno= 2
+
+
+
+class Student:
+    def _init_(self,n,r):   #parameter constructor   but in java and c++ constructor same as classname
+        self.name=n # instance variable or  object data 
+        self.rollno=r
+    def show(self):
+        print("my name=",self.name)
+        print("my rollno=",self.rollno)
+print("enter student name and rollno")
+n=input()
+r=int(input())
+s=Student(n,r)
+s.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Student:
+	def _init_(self,n,r,m):
+		self.name=n
+		self.roll=r
+		self.mark=m
+	def show(self):
+		print("my name=",self.name)
+		print("my rollno=",self.roll)
+		print("my mark=",self.mark)
+s=Student("muna",1,90.50)
+s1=Student("kuna",2,80.50)
+s.show()
+s1.show()
+
+o/p:
+enter student name and rollno
+a das
+3
+my name= a das
+my rollno= 3
+
+
+
+
+
+
+
+class Student:
+    def _init_(self,n,r):   #parameter constructor   but in java and c++ constructor same as classname
+        self.name=n # instance variable or  object data 
+        self.rollno=r
+    def show(s):  #self postion write any name
+        print("my name=",s.name)
+        print("my rollno=",s.rollno)
+print("enter student name and rollno")
+n=input()
+r=int(input())
+s=Student(n,r)
+s.show()
+
+
+
+
+
+o/p:
+enter student name and rollno
+a das
+3
+my name= a das
+my rollno= 3
+
+
+
+
+
+class Rectangle:
+    def _init_(self,L,B):  
+        self.L=L
+        self.B=B
+    def show(self):  
+        print("length=",self.L)
+        print("breadth=",self.B)
+    def area(self):
+        return self.L*self.B 
+    def peri(self):
+        print("perimeter=",2*(self.L+self.B))
+print("enter rectangle length and breadth ")
+Len=float(input())
+Bre=float(input())
+r=Rectangle(Len,Bre)
+r.show()
+print("area of rectangle=",r.area())
+r.peri()
+
+
+
+o/p:
+C:\Users\LENOVO\OneDrive\Desktop\python9pm>py 1.py
+enter rectangle length and breadth
+5
+7
+length= 5.0
+breadth= 7.0
+area of rectangle= 35.0
+perimeter= 24.0
+
+
+
+class Rectangle:
+    def __init__(self,L,B):  
+        self.L=L
+        self.B=B
+    def show(self):  
+        print("length=",self.L)
+        print("breadth=",self.B)
+    def area(self):
+        return self.L*self.B 
+    def peri(self):
+        print("perimeter=",2*(self.L+self.B))
+print("enter rectangle length and breadth ")
+Len=float(input())
+Bre=float(input())
+r=Rectangle(Len,Bre)
+r.show()
+print("area of rectangle=",r.area())
+r.peri()
+
+
+
+
+
+class Square:
+    def __init__(self,L):  
+        self.L=L
+    def show(self):  
+        print("length=",self.L)
+    def area(s):
+        return s.L*s.L 
+    def peri(self):
+        print("perimeter=",4*self.L)
+print("enter square length  ")
+Len=float(input())
+s=Square(Len)
+s.show()
+print("area of square=",s.area())
+s.peri()
+
+import math
+class circle:
+    def __init__(self,r):
+        self.r=r
+    def show(self):
+        print("radius=",self.r)
+    def area(self):
+        return math.pi*r*r
+    def circum(self):
+        print("circumference=", 2*math.pi*r)
+print("Enter the radius of the circle")
+rad=float(input())
+r=circle(len)
+r.show()
+print("area of square=".self.area())
+r.circum()
+
+
+
+
+
+
+class BankAccount:
+    def __init__(self, name, balance=0.0):
+        self.name = name
+        self.balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            print(f"{amount} deposited. New balance: {self.balance}")
+        else:
+            print("Invalid deposit amount")
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            print(f"{amount} withdrawn. Remaining balance: {self.balance}")
+        else:
+            print("Insufficient balance")
+
+    def show_balance(self):
+        print(f"Account holder: {self.name}, Balance: {self.balance}")
+
+
+# --- User Interaction ---
+print("Enter your name:")
+name = input()
+account = BankAccount(name)
+print("Initial deposit amount:")
+amt = float(input())
+account.deposit(amt)
+print("Enter withdrawal amount:")
+wd = float(input())
+account.withdraw(wd)
+
+account.show_balance()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Mobile:
+    def __init__(self, brand, model, price):
+        self.brand = brand
+        self.model = model
+        self.price = price
+
+    def show(self):
+        print("Mobile Details:")
+        print("Brand:", self.brand)
+        print("Model:", self.model)
+        print("Price:", self.price)
+
+    def update_price(self, new_price):
+        self.price = new_price
+        print("Price updated to:", self.price)
+
+
+# --- User Input ---
+print("Enter Mobile Brand:")
+brand = input()
+
+print("Enter Mobile Model:")
+model = input()
+
+print("Enter Mobile Price:")
+price = float(input())
+
+# Create object
+m = Mobile(brand, model, price)
+
+# Show details
+m.show()
+
+# Update price
+print("Enter new price to update:")
+new_price = float(input())
+m.update_price(new_price)
+
+# Show updated details
+m.show()
+
+
+
+
+
+
+
+
+
+
+constructor
+________________
+A constructor is a special method in Python used to initialize objects of a class. The most commonly used constructor method is __init__(). 
+Syntax of Constructor
+
+class ClassName:
+    def __init__(self):    #constructor
+         # initialization code
+
+
+Key Points:
+__init__() is automatically called when a new object is created.
+
+It is used to assign values to object properties or do any setup.
+
+self refers to the current object.
+
+
+
+
+class Test:
+    def __init__(self):
+        print("constructor")
+t=Test()
+t1=Test()
+t2=Test()
+
+o/p:
+constructor
+constructor
+constructor
+
+
+
+Example 1: Basic Constructor
+
+class Student:
+    def __init__(self):   # constructor
+        print("Constructor is called!")
+
+s1 = Student()  # object creation
+
+o/p:
+constructor is called
+
+
+note : every class by default constructor avaliable
+class Demo:
+    pass
+
+d = Demo()
+print(d.__init__)         # Show the default constructor
+print(type(d.__init__))   # Show type
+
+o/p:
+<method-wrapper '__init__' of Demo object at 0x0000022AF8886690>
+<class 'method-wrapper'>
+
+
+class MyClass:
+    pass
+
+help(MyClass)
+
+
+o/p:
+Help on class MyClass in module __main__:
+
+class MyClass(builtins.object)
+ |  Data descriptors defined here:
+ |
+ |  __dict__
+ |      dictionary for instance variables
+ |
+ |  __weakref__
+ |      list of weak references to the object
+
+
+class MyClass:
+    pass
+
+print(MyClass.__init__)           # Show the constructor function
+print(MyClass.__init__ == object.__init__)  # Check if it's inherited from object
+
+o/p:
+<slot wrapper '__init__' of 'object' objects>
+True
+
+
+
+
+
+class Test:
+    def __init__(self):
+        self.x=0
+        self.y=0
+t=Test()
+t1=Test()
+t2=Test()
+t.x=10
+t.y=20
+print(t.x)
+print(t.y)
+t1.x=30
+t1.y=40
+print(t1.x)
+print(t1.y)
+
+print(t2.x)
+print(t2.y)
+
+print(t.__dict__)
+print(t1.__dict__)
+print(t2.__dict__)
+
+
+o/p:
+10
+20
+30
+40
+0
+0
+{'x': 10, 'y': 20}
+{'x': 30, 'y': 40}
+{'x': 0, 'y': 0}
+
+class Test:
+    def __init__(self):
+        self.x=0
+        self.y=0
+t=Test()
+t1=Test()
+t2=Test()
+print(t.__dict__)
+print(t1.__dict__)
+print(t2.__dict__)
+
+o/p:
+{'x': 0, 'y': 0}
+{'x': 0, 'y': 0}
+{'x': 0, 'y': 0}
+
+
+
+parameter constructor
+___________________________
+class Test:
+    def __init__(self,a,b):
+        print("parameter constructor ",a,b)
+t=Test(10,20)
+t1=Test(30,40)
+#t2=Test()  error no argument
+
+
+o/p:
+parameter constructor 10 20
+parameter constructor 30 40
+
+
+
+
+class Test:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+t=Test(10,20)
+t1=Test(30,40)
+t2=Test(50,60)
+print(t.__dict__)
+print(t1.__dict__)
+print(t2.__dict__)
+
+
+o/p:
+
+{'x': 10, 'y': 20}
+{'x': 30, 'y':40}
+{'x': 50, 'y': 60}
+
+
+constructor overloading not allow in python
+__________________________________________
+
+we can write more constructor inside class last constructor is final
+
+
+
+
+class Test:
+    
+    def __init__(self,x):
+        print("parameter constructor")
+    def __init__(self):
+        print("basic constructor")
+t=Test()
+o/p:
+basic constructor
+
+
+class Test:  
+    def __init__(self):
+        print("basic constructor")
+    def __init__(self,x):
+        print("parameter constructor")
+t=Test(10)
+
+o/p:
+parameter constructor
+
+note :
+if we are write more than constructor last one final.
+
+
+class Test:  
+    def __init__(self):
+        print("basic constructor")
+    def __init__(self,x):
+        print("parameter constructor")
+t=Test(10)
+t1=Test()    # error
+
+o/p:
+parameter constructor
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Desktop\python9pm\lsw.py", line 7, in <module>
+    t1=Test()
+       ^^^^^^
+TypeError: Test.__init__() missing 1 required positional argument: 'x'
+
+ constructor  default parameter
+ ________________________________
+
+class Test:  
+    def __init__(self,x=0):
+        print("default  constructor ",x)
+t=Test(10)
+t1=Test()
+
+o/p:
+default  constructor  10
+default  constructor  0
+
+
+
+
+Example 3: Default Values in Constructor
+class Student:
+    def __init__(self, name="Unknown"):
+        self.name = name
+    def show(self):
+        print("Name:", self.name)
+s1 = Student()
+s2 = Student("Priya")
+s1.show()
+s2.show()
+
+o/p:
+Name: Unknown
+Name: Priya
+
+
+destructor
+__________________
+A destructor is a special method in Python called when an object is about to be destroyed, i.e., when it goes out of scope or is explicitly deleted using del.
+
+🔹 Syntax of Destructor
+def __del__(self):
+    # cleanup code
+
+
+🔍 Key Points:
+Destructor method name is __del__().
+
+It is automatically called when the object is garbage collected.
+
+Mainly used for cleanup operations like closing files or releasing resources.
+
+
+
+class Test:
+    def __init__(self):
+        print("constructor")
+    def __del__(self):
+        print("destructor")
+t1=Test()
+t2=Test()
+t3=Test()
+
+
+constructor
+constructor
+constructor
+destructor
+destructor
+destructor
+
+
+
+https://chatgpt.com/share/68765041-edfc-8008-a177-bf724e2b2213
+
+
+class Test:
+    def __init__(self):
+        print("constructor")
+    def __del__(self):
+        print("destructor")
+t1=Test()
+t1=None
+t2=Test()
+t3=Test()
+
+o/P
+constructor
+destructor
+constructor
+constructor
+destructor
+destructor
+
+
+
+
+
+
+
+
+
+
+
+
+class Test:
+    def __init__(self):
+        print("constructor")
+    def __del__(self):
+        print("destructor")
+t1=Test()
+del t1
+t2=Test()
+t3=Test()
+
+o/P
+constructor
+destructor
+constructor
+constructor
+destructor
+destructor
+
+
+class Test:
+    def __init__(self):
+        print("constructor")
+    def __del__(self):
+        print("destructor")
+t1=Test()
+t2=Test()
+t1=t2
+t3=Test()
+
+o/p:
+constructor
+constructor
+destructor
+constructor
+destructor
+destructor
+
+
+
+class Test:
+    def __init__(self):
+        print("constructor")
+    def __del__(self):
+        print("destructor")
+def show():
+    print("show function start")
+    t2=Test()
+    print("show function end")
+t1=Test()
+show()
+t3=Test()
+
+o/p:
+constructor
+show function start
+constructor
+show function end
+destructor
+constructor
+destructor
+destructor
+
+
+
+
+
+class Test:
+    def __init__(self,x):
+        self.x=x
+        print("constructor")
+    def __del__(self):
+        print("destructor ",self.x)
+def show():
+    print("show function start")
+    t2=Test(20)
+    print("show function end")
+t1=Test(10)
+show()
+t3=Test(30)
+
+o/P:
+constructor
+show function start
+constructor
+show function end
+destructor  20
+constructor
+destructor  10
+destructor  30
+
+
+
+
+Python uses automatic garbage collection to free up memory from unused objects.
+The gc module lets you:
+
+Manually trigger garbage collection.
+
+Enable or disable the garbage collector.
+
+Track unreachable objects.
+
+
+
+
+import gc
+
+class Test:
+    def __init__(self, x):
+        self.x = x
+        print("constructor")
+
+    def __del__(self):
+        print("destructor", self.x)
+
+def show():
+    print("show function start")
+    t2 = Test(20)
+    print("show function end")
+    # Force garbage collection inside show()
+    gc.collect()
+    print("bye")
+t1 = Test(10)
+show()
+t3 = Test(30)
+
+# Force garbage collection at the end
+gc.collect()
+
+
+
+o/p:
+constructor
+show function start
+constructor
+show function end
+bye
+destructor 20
+constructor
+destructor 10
+destructor 3
+
+
+class Student:
+    def set(self,n,r,m):
+        self.name=n
+        self.roll=r
+        self.mark=m
+    def show(self):
+        print("my name=",self.name)
+        print("rollno=",self.roll)
+        print("mark=",self.mark)
+s=Student()
+s.set("muna",1,90.50)
+s.show()
+
+using method to initlize  data   call the method
+
+
+
+better we choose constructor for initlize datamemeber or propertits
+method use explore  the data
+
+
+
+class Student:
+    def __init__(self,n,r,m):
+        self.name=n
+        self.roll=r
+        self.mark=m
+    def show(self):
+        print("my name=",self.name)
+        print("rollno=",self.roll)
+        print("mark=",self.mark)
+s=Student("muna",1,90.50)
+s.show()
+
+
+
+
+
+class Student:
+    def __init__(self, name, roll):
+        # Constructor
+        self.name = name
+        self.roll = roll
+        print("Constructor called")
+
+    def display(self):
+        # Method
+        print("Name:", self.name)
+        print("Roll No:", self.roll)
+
+# Creating object – constructor is called automatically
+s1 = Student("Alice", 101)
+
+# Calling method explicitly
+s1.display()
+
+| Feature           | **Constructor**                                          | **Method**                                    |
+| ----------------- | -------------------------------------------------------- | --------------------------------------------- |
+| **Purpose**       | Used to **initialize** an object when it's created       | Used to **perform operations** on object data |
+| **Name**          | Always `__init__()`                                      | Any valid function name                       |
+| **Called when?**  | Automatically called **once** when an object is created  | Called **manually** using the object          |
+| **Return type**   | Must **not return anything explicitly** (returns `None`) | Can return any value                          |
+| **Defined using** | `def __init__(self):`                                    | `def method_name(self):`                      |
+| **Usage**         | Sets initial values of object attributes                 | Defines behaviors or actions                  |
+| **Call syntax**   | Automatically called: `obj = ClassName()`                | Called like: `obj.method_name()`              |
+
+
+Constructor = Initialization
+
+Method = Behavior/Action
+
+You usually define a constructor once per class, but you can define many methods.
+
+
+method how many types
+_________________________
+function defined inside class that is known as method
+(1)instance method
+(2)class  method
+(3)static method
+
+ 1. Instance Method
+ ___________________
+Most common type
+
+Operates on instance variables
+
+First parameter is always self  
+self alternate we can write any name 
+
+class Demo:
+    def __init__(self, x):
+        self.x = x
+    def show(self):  # instance method
+        print("x =", self.x)
+
+obj = Demo(10)  #object creation    obj ->object refernce
+obj.show()
+obj1 = Demo(20)  #object creation    obj ->object refernce
+obj1.show()
+2.class method
+_____________
+Defined using @classmethod decorator
+
+First parameter is cls, referring to the class     cls alternate we can write any name
+
+Can access or modify class variables, not instance variables directly
+
+class Demo:
+    count = 0 #class variable
+    @classmethod
+    def update_count(cls):
+        cls.count += 1
+        print("Count =", cls.count)
+
+Demo.update_count()
+
+
+o/P:
+1
+
+
+class Demo:
+    @classmethod
+    def show(cls):
+        print("show class method")
+Demo.show()
+
+o/P;
+show class method
+
+class Demo:
+    @classmethod
+    def show(cls):
+        print("show class method")
+Demo.show() # better calling by using class
+d1=Demo()
+d1.show()   # valid not recommand
+o/P;
+show class method
+show class method
+
+
+3. Static Method
+Defined using @staticmethod decorator
+
+No self or cls parameter
+
+Acts like a normal function inside a class
+
+Used for utility purposes
+
+
+class Demo:
+    @staticmethod
+    def add(a, b):
+        print("Sum =", a + b)
+
+Demo.add(3, 4)
+
+o/p:
+sum=7
+
+
+
+class Demo:
+    @staticmethod
+    def add(a, b):
+        print("Sum =", a + b)
+
+Demo.add(3, 4)   # better call by classname  
+d1=Demo()
+d1.add(5,7)   #valid  not recommand
+
+o/p:
+Sum=7
+Sum=12
+
+
+different types of variable
+________________________________
+
+(1)local 
+(2)global
+(3)instance
+(4)class
+
+
+https://chatgpt.com/share/68779dbc-0870-8008-9344-a296a6600144
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'

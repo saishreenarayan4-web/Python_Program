@@ -1,0 +1,181 @@
+using List Comprehension
+_________________
+L=[5,8,9,10,12]
+L1=[i for i in L if i%2==0]
+print(L1)
+
+
+
+s="welcome"
+L=[]
+for i in s:
+	if i in "aeiou":
+		L.append(i)
+print(L)
+
+
+
+
+s="welcome"
+L=[i for i in s if i in "aeiou"]
+print(L)
+
+
+
+
+L=[5,8,9,10,12]
+L1=[]
+for i in L:
+	L1.append(i+3)
+print(L1)
+
+
+L=[5,8,9,10,12]
+L1=[i+3 for i in L ]
+print(L1)
+
+
+
+L=[5,8,9,10,12]
+L1=[i+3%2==0 for i in L ]
+print(L1)
+
+o/p:
+[False, False, False, False, False]
+
+
+2d list  
+___________
+L=[[1,2,3],[4,5,6],[7,8,9]]
+L1=[]
+for i in L:
+	x=[]
+	for j in i:
+		x.append(j)
+	L1.append(x)
+print(L1)
+
+
+
+L=[[1,2,3],[4,5,6],[7,8,9]]
+L1=[[j for j in i] for i in L]
+print(L1)
+
+
+
+
+matrix add
+______________
+L1=[[1,2,3],[4,5,6]]
+L2=[[2,5,1],[3,4,2]]
+L3=[]
+for i in range(len(L1)):
+	x=[]
+	for j in range(len(L1[i])):
+		x.append(L1[i][j]+L2[i][j])
+	L3.append(x)
+print(L3)
+
+
+
+L1=[[1,2,3],[4,5,6]]
+L2=[[2,5,1],[3,4,2]]
+L3=[[L1[i][j]+L2[i][j] for j in range(len(L1[i]))] for i in range(len(L1))]
+print(L3)
+
+
+
+
+
+
+L1 = [[1, 2, 3], [4, 5, 6]]
+L2 = [[2, 5, 1], [3, 4, 2]]
+L3 = []
+
+for i in range(len(L1)):
+    row = []
+    for j in range(len(L1[i])):
+        row.append(L1[i][j] - L2[i][j])
+    L3.append(row)
+
+print(L3)
+
+
+upper triangle
+____________________
+
+L1 = [[1, 2, 3], [4, 5, 6],[7,8,9]]
+L3 = []
+for i in range(len(L1)):
+	x=[]
+	for j in range(len(L1[i])):
+		if i <= j:
+			x.append(L1[i][j])
+	L3.append(x)
+print(L3)
+
+
+
+
+L1 = [[1, 2, 3], [4, 5, 6],[7,8,9]]
+L3 = [[ L1[i][j] for j in range(len(L1[i])) if i<=j]for i in range(len(L1))]
+print(L3)
+
+
+
+
+dinagole
+___________
+L1 = [[1, 2, 3], [4, 5, 6],[7,8,9]]
+L3 = [[ L1[i][j] for j in range(len(L1[i])) if i==j]for i in range(len(L1))]
+print(L3)
+
+
+transpose
+_____________
+L1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+# Transpose
+L2 = [[L1[j][i] for j in range(len(L1))] for i in range(len(L1[0]))]
+print(L2)
+
+
+
+
+multiplication
+__________________
+A = [[1, 2, 3],
+     [4, 5, 6]]
+
+B = [[7, 8],
+     [9, 10],
+     [11, 12]]
+
+# Create an empty result matrix with size 2x2
+result = []
+
+for i in range(len(A)):
+    row = []
+    for j in range(len(B[0])):
+        sum = 0
+        for k in range(len(B)):
+            sum += A[i][k] * B[k][j]
+        row.append(sum)
+    result.append(row)
+
+print(result)
+
+list comphersion matrix mult 
+__________________________________
+
+
+
+A = [[1, 2, 3], [4, 5, 6]]
+B = [[7, 8], [9, 10], [11, 12]]
+
+# Matrix multiplication
+result = [[sum(A[i][k] * B[k][j] for k in range(len(B)))
+           for j in range(len(B[0]))]
+          for i in range(len(A))]
+
+print(result)

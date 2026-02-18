@@ -1,0 +1,6 @@
+l = float(input("enter length"))
+w = float(input("enter width"))
+p = 2*(l+w)
+print("length=",l)
+print("width=",w)
+print("perimeter=",p)

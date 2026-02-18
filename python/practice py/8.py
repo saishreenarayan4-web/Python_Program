@@ -1,0 +1,12 @@
+name="saishree"
+roll=21
+cgpa=8.25
+print("my name=",name)
+print("my roll no=",roll)
+print("my cgpa=",cgpa)
+name1="gyana"
+roll1=69
+cgpa1=5.64
+print("my name1=",name1)
+print("my roll1=",roll1)
+print("my cgpa1=",cgpa1)
