@@ -201,7 +201,7 @@ class Student:
 s=Student() # object create  got where constrcutor 
 
 print(s._dict_)  
-print(Student._dict_)
+print(Student.__dict__)
 print("my name=",s.name)
 print("my rollno=",s.rollno)
 print("clg name=",s.clg)
@@ -223,7 +223,7 @@ clg name better way = iter
 
 class Student:
     clg="iter"  #class variable common for all object
-    def _init_(self):   
+    def __init__(self):   
         self.name="muna" # instance variable  object data 
         self.rollno=1
 s=Student() # object create  got where constrcutor 
