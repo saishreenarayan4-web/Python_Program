@@ -424,6 +424,8 @@ ob.show()
 o/P:
 A show
 
+
+
 class A:
 	def show(self):
 		print("A show")
@@ -436,6 +438,9 @@ ob.show()
 
 o/P;
 B show 
+
+
+
 
  super() in Python:
  super().method_name(argument)
@@ -487,6 +492,8 @@ __init__ constructor and instance methods or custom instance-level code blocks (
 Static Block Equivalent in Python (Executed when the class is loaded)
 Python does not have a dedicated static block, but code at the class level is executed
  when the class is first interpreted (i.e., when the script is run or module imported).
+
+ 
 class A:
 	print("A static block")
 print(A)
@@ -518,7 +525,7 @@ A static block
 class A:
 	print("A static block")
 class B(A):
-	print("B static block")
+	pass
 print(B)
 
 
